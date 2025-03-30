@@ -9,6 +9,7 @@ public class ConversorTemperatura {
         return C;
     }
 
+    //retorna double pq pode ser tanto inteiro quando um número com vírgula, depende se o usuário quer ou não arredondar
     public double converte(double C, int A, char B) { //função que converte Celsius (double) em Fahrenheit. A é o ajuste desejado pelo usuário e B é se ele quer ou não arredondamento
         double F = (double) (C * 1.8 + 32); //transforma em fahrenheit
     
@@ -21,7 +22,7 @@ public class ConversorTemperatura {
         return F;
     }
     
-    public void converte(int[] vetor, int A){
+    public void converte(int[] vetor, int A){ //a função recbee como argumentos o vetor q vetor q vai mudar e de quanto será o ajuste
         double F;
         double C;
         double[] R = new double[vetor.length];        

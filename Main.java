@@ -19,7 +19,7 @@ public class Main{
                     System.out.println("Insira o valor em graus Celsius que gostaria de converter: ");
                     int C = teclado.nextInt();
                     teclado.nextLine();
-                    double F = conversor.converte(C);
+                    double F = conversor.converte(C); //chama a função q converte de verdade o número
                     System.out.println(C + " graus Celsius equivalem a "+ String.format("%.2f", F) + " graus Fahrenheit");
                     break;
 
@@ -27,7 +27,7 @@ public class Main{
                     System.out.println("Insira o valor em graus Fahrenheit que gostaria de converter: ");
                     F = teclado.nextDouble();
                     teclado.nextLine();
-                    double C2 = conversor.converte(F);
+                    double C2 = conversor.converte(F); //chama a função q converte de verdade o número
                     System.out.println(String.format("%.2f", F) + " graus Fahrenheit equivalem a "+ String.format("%.2f", C2) + " graus Celsius");
                     break;
 
@@ -40,7 +40,7 @@ public class Main{
                     teclado.nextLine();
                     System.out.println("Gostaria de arredondar o resultado? (Y/N): ");
                     char R = teclado.next().charAt(0);
-                    F = conversor.converte(C2, A, R);
+                    F = conversor.converte(C2, A, R); //chama a função q converte de verdade o número passando os argumentos: valor em C, ajuste e se vai ou não arredondar
                     System.out.println(String.format("%.2f", C2) + " graus Celsius equivalem a "+ F + " graus Fahrenheit com ajuste de " + A+ "\n");
                     break;
 
@@ -49,10 +49,11 @@ public class Main{
                     int num = teclado.nextInt();
                     teclado.nextLine();
                     int[] vetor = new int[num];
-                    for (int i = 0; i < vetor.length; i++) {
-                        System.out.printf("Insira o "+ (i+1) +"° valor em Celsius:");
+                    for (int i = 0; i < vetor.length; i++) { //foreach não funciona aqui por algum motivo
+                        System.out.printf("Insira o "+ (i+1) +"° valor em Celsius:"); //pra ler todos os valores e por no array
                         vetor[i] = teclado.nextInt();
                     }
+                    //Ajuste é quanto você quer somar ao valor final (pra mim isso não faz o menor sentido)
                     System.out.println("De quanto você gostaria que fosse o ajuste extra? (Se não quiser ajuste, coloque 0): ");
                     A = teclado.nextInt();
                     teclado.nextLine();
@@ -65,7 +66,7 @@ public class Main{
                     break;
 
                 default:
-                    System.out.println("A opção inserida não está entre as alternativas.");
+                    System.out.println("\u001B[31m" + "A opção inserida não está entre as alternativas." + "\u001B[0m"); //texto vermelhinho de novo
                     break;
             }
         } while (op!=5);        
